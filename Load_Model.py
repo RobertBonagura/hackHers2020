@@ -9,7 +9,7 @@ MIN_VALUE = [10000, 1, 0, 0, 21, -2, -2, -2, -2, -2, -2, -165580, -
              69777, -157264, -170000, -81334, -339603, 0, 0, 0, 0, 0, 0]
 
 
-x_in = numpy.empty((1, INPUT_DIMENSION))
+x_in = numpy.empty((1, INPUT_DIMENSION), dtype = numpy.float)
 
 
 feature = 0
@@ -17,7 +17,7 @@ while feature < INPUT_DIMENSION:
     x_in[0, feature] = (
         x_in[0, feature] - MIN_VALUE[feature]) / (MAX_VALUE[feature]-MIN_VALUE[feature])
     feature += 1
-    
+
 
 model = load_model("fiserv_model.h5")
 print(model.predict(x_in))
