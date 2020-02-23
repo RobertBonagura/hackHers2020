@@ -1,6 +1,8 @@
 const express = require("express");
 const { spawn } = require("child_process");
+var cors = require('cors');
 const app = express();
+app.use(cors());
 const port = 5000;
 const router = express.Router();
 var array = [
@@ -36,8 +38,8 @@ router.post("/defaulted", (req, res) => {
   //res.send("Get info");
   var dataToSend;
   //spawn new child process to call the python script
-  const python = spawn("python", [
-    "/Users/tanviwagle/desktop/hackHers2020/Load_Model.py",
+  const python = spawn("python3", [
+    "/Users/robert.bonagura/Desktop/hackHers2020/Load_Model.py",
     vars
   ]);
   // collect data from script
@@ -45,16 +47,22 @@ router.post("/defaulted", (req, res) => {
   python.stderr.on("data", function(data) {
     //console.log("Pipe data from python script ...");
     dataToSend = data.toString();
-    //console.log(dataToSend);
+    console.log(dataToSend);
   });
   python.stdout.on("data", function(data) {
     //console.log("Pipe data from python script ...");
     dataToSend = data.toString();
     if (dataToSend.includes("DEFAULT")) {
+      console.log(dataToSend)
       var resp = dataToSend.split("DEFAULT: [[");
       var res2 = resp[1].split("]]");
       console.log(res2[0]);
-      res.send(res2[0]);
+      if (res2[0] < 0.5){
+        res.send("0");
+      }
+      else{
+       res.send("1");
+      }
     }
   });
   // in close event wrese are sure that stream from child process is closed

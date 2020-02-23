@@ -10,8 +10,10 @@
 
   .App {
     text-align: center;
-    background-image: url("./img/form2.jpeg");
-    background-color: #282c34;
+    background-image: url("./img/form2.jpg");
+    background-position: center;
+    background-blend-mode: color;
+    background-color: #182c34;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,4 +31,18 @@
     justify-content: center;
     align-content: center;
     width: 80%;
+    margin-left: 140px;
+}
+
+.group-head{
+    border-radius: 25px;
+    background-color: #f19763a8;
+    color: #1b33bd ; 
+    text-shadow: #001277;
+    justify-content: center;
+    width: 25%;
+    padding: 5px;
+    margin: 100px;
+    padding-bottom: 80px; 
+    padding-top: 50px;     
 }

@@ -8,7 +8,7 @@ class Form extends React.Component {
       this.state = {limit: '', sex: '', education: '', marriage: '', age: '', 
                     pay1:'', pay2:'', pay3:'', pay4: '', pay5: '', pay6: '', 
                     billamount1: '',  billamount2: '',  billamount3: '',  billamount4: '',  billamount5: '',  billamount6: '', 
-                    ayamount1: '', payamount2: '',  payamount3: '',  payamount4: '',  payamount5: '',  payamount6: ''
+                    payamount1: '', payamount2: '',  payamount3: '',  payamount4: '',  payamount5: '',  payamount6: ''
                     };
   
       this.handleChange = this.handleChange.bind(this);
@@ -25,9 +25,15 @@ class Form extends React.Component {
     }
   
     handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      Axios.post('http://localhost:5000/learn/defaulted', this.state).then(user =>{
-          console.log(user)
+      //alert('A name was submitted: ' + this.state.value);
+      console.log("ggeloo");
+      Axios.post('http://localhost:5000/learn/defaulted', null, {params: this.state}).then(user =>{
+          console.log(user.data)
+          if (user.data == "0"){
+              alert("Customer will not default!");
+          } else {
+              alert("Customer will default!");
+          }
       })
       event.preventDefault();
     }
@@ -35,7 +41,7 @@ class Form extends React.Component {
     render() {
       return (
         <div className="App">
-          <header className="App-header">
+          <header className="group-head">
               <p>Input customer information:</p>
           </header>
                 <form onSubmit={this.handleSubmit}>
@@ -121,9 +127,9 @@ class Form extends React.Component {
                                 </table>
                             </label><br></br>
                         </div>
-                    
+                        </div> 
                     <input type="submit" value="Submit" color="blue" />
-                </div>
+                
                 </form>
         </div>
       );
