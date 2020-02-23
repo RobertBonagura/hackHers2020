@@ -46,7 +46,7 @@ class Form extends React.Component {
           </header>
                 <form onSubmit={this.handleSubmit}>
                 <div class="groups">
-                    <div class="group">
+                    <div class="form-group">
                         <label>
                             Limit Balance<br></br>
                             <input type="text" value={this.state.limit} onChange={this.handleChange} name="limit"/>
@@ -74,7 +74,7 @@ class Form extends React.Component {
 
                         </div>
 
-                        <div class="group">
+                        <div class="form-group">
                             <label>
                                 Repayment Status for the past 6 months:
                                 <table>
@@ -92,7 +92,7 @@ class Form extends React.Component {
                             </label><br></br>
                         </div>
 
-                        <div class="group">
+                        <div class="form-group">
                             <label>
                                 Amount of Bill Statement for the past 6 months:
                                 <table>
@@ -110,7 +110,7 @@ class Form extends React.Component {
                             </label><br></br>
                         </div>
 
-                        <div class="group">
+                        <div class="form-group">
                             <label>
                                 Amount of Previous Payment for the past 6 months:
                                 <table>

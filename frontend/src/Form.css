@@ -1,19 +1,15 @@
 .App-header {
     text-align: center; 
     background-color: #282c34;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;}
+    height: 100%;
+    background-size: auto ;
+   }
 
   .App {
     text-align: center;
-    background-image: url("./img/form2.jpg");
+    background-image: url("./img/abstract.jpg");
     background-position: center;
-    background-blend-mode: color;
-    background-color: #182c34;
+    background-color: #0026ffaf;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,7 +19,20 @@
     color: white;
   }
 
-.group input{
+  .form-group{
+    border-radius: 25px;
+    background-color: #6fe6e6ea;
+    color: #1e2d85 ; 
+    text-shadow: #001277;
+    justify-content: center;
+    width: 75%;
+    padding: 5px;
+    margin-left: 10000px;
+    margin: 5px; 
+    margin-bottom: 20px;
+    }
+
+.form-group input{
     width: 75%;
 }
 
@@ -36,13 +45,14 @@
 
 .group-head{
     border-radius: 25px;
-    background-color: #f19763a8;
+    background-color: #6fe6e6ea;
     color: #1b33bd ; 
     text-shadow: #001277;
     justify-content: center;
     width: 25%;
     padding: 5px;
     margin: 100px;
-    padding-bottom: 80px; 
-    padding-top: 50px;     
+    margin-bottom: 100px;
+    padding-bottom: 30px; 
+    padding-top: 30px;     
 }
