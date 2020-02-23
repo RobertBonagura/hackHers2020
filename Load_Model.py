@@ -10,11 +10,7 @@ string_data = ast.literal_eval(string)
 array_data = []
 for key,value in string_data.items():
     array_data.append(value)
-
-string_data = "HERE IS YOUR INPUT"
-
-array_data = [1000000, 2, 6, 3, 79, 8, 8, 8, 8, 8, 8, 964511, 983931, 1664089,
-             891586, 927171, 961664, 873552, 1684259, 896040, 621000, 426529, 528666]
+print(array_data)
 
 INPUT_DIMENSION = 23
 MAX_VALUE = [1000000, 2, 6, 3, 79, 8, 8, 8, 8, 8, 8, 964511, 983931, 1664089,
@@ -33,6 +29,7 @@ while feature < INPUT_DIMENSION:
     feature += 1
 
 
-model = load_model("/Users/tanviwagle/desktop/hackHers2020/fiserv_model.h5")
+model = load_model("/Users/robert.bonagura/Desktop/hackHers2020/fiserv_model.h5")
+print(model.summary())
 print("DEFAULT:", model.predict(
     [x_in[:, 0:5], x_in[:, 5:11], x_in[:, 11:17], x_in[:, 17:23]]))
