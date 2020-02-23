@@ -1,7 +1,7 @@
 const express = require("express");
 const { spawn } = require("child_process");
 const app = express();
-const port = 3000;
+const port = 3001;
 const router = express.Router();
 router.get("/defaulted", (req, res) => {
   res.send("Get info");

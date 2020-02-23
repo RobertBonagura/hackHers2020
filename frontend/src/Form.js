@@ -35,7 +35,7 @@ class Form extends React.Component {
     render() {
       return (
         <div className="App">
-          <header className="App-header">
+          <header className="group-head">
               <p>Input customer information:</p>
           </header>
                 <form onSubmit={this.handleSubmit}>
@@ -121,9 +121,9 @@ class Form extends React.Component {
                                 </table>
                             </label><br></br>
                         </div>
-                    
+                        </div> 
                     <input type="submit" value="Submit" color="blue" />
-                </div>
+                
                 </form>
         </div>
       );
